@@ -1,0 +1,103 @@
+/* ARCHIVE PAGE */
+.archive-page {
+  padding: 15rem 0 10rem;
+  background-color: var(--cream);
+  min-height: 100vh;
+  color: var(--coffee-dark);
+}
+
+.archive-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 12rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 4rem 2rem;
+}
+
+.archive-grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.archive-grid-item.locked {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.archive-item-image-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: rgba(20, 15, 10, 0.05);
+  position: relative;
+}
+
+.archive-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: grayscale(100%);
+}
+
+.archive-grid-item:hover:not(.locked) .archive-item-image {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.archive-locked-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(20, 15, 10, 0.2);
+}
+
+.archive-locked-placeholder span {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--coffee-med);
+}
+
+.archive-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.archive-item-number {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--royal-red);
+  letter-spacing: 0.2em;
+}
+
+.archive-item-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .archive-page { padding: 8rem 0 6rem; }
+  .archive-title { font-size: 3rem; margin-bottom: 4rem; }
+  .archive-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 3rem 1.5rem; }
+  .archive-item-title { font-size: 1.6rem; }
+}
