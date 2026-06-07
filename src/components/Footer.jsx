@@ -60,7 +60,7 @@ export default function Footer() {
         
         <div className="footer-right">
           <p className="footer-production">
-            A <a href="https://voidstudio.co" target="_blank" rel="noopener noreferrer" className="void-link">Ascend</a> CREATION
+            An <a href="https://ascnedin.in" target="_blank" rel="noopener noreferrer" className="void-link">Ascend</a> CREATION
           </p>
           <p className="footer-copyright">
             © {new Date().getFullYear()} CHRONICLE.<br/>
